@@ -1,6 +1,5 @@
 # human-body-visualization
 
-
 ![](images/hero_image.png)
 <br>
 
@@ -9,6 +8,7 @@
 This project centers on the script **`mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py`**, an experimental viewer for navigating a 3D volume through multiple kinds of slices, transformed views, curve-based cutting planes, multi-volume comparisons, object-based interventions, and image-space effects. It combines a technical interest in medical/scientific visualization with a conceptual interest in meat, anatomy, taxidermy, spectacle, and the politics of displaying bodies.
 
 At a basic level, the tool lets you:
+
 - load a **main color volume**, plus optional **skeleton** and **gradient/distance** volumes,
 - inspect the data through **single**, **axis**, **local oblique**, **multi-volume**, and **curved-plane** views,
 - apply **screen-space FX** and image transformations,
@@ -41,6 +41,7 @@ This work began as part of a broader **human visualization project**. The origin
 - How do scientific displays and cultural displays overlap?
 
 In this project, slices are not only diagnostic images. They can also feel like:
+
 - butchered sections,
 - wall-mounted trophies,
 - inflated or altered flesh,
@@ -48,6 +49,7 @@ In this project, slices are not only diagnostic images. They can also feel like:
 - and interfaces for speculation about how bodies are represented.
 
 The project pulls together influences from:
+
 - **medical visualization**,
 - **DICOM / visible human datasets**,
 - **XR anatomy tools**,
@@ -64,6 +66,7 @@ I was motivated by a tension between two ways of looking at bodies.
 On one side, there is the scientific and pedagogical ambition behind projects like the **Visible Human Project**: to dissect, digitize, and visualize the human body in order to improve medical knowledge and make anatomy more accessible and correct. On the other side, there is a cultural history of displaying bodies and animal forms through hunting trophies, butcher charts, taxidermy, preserved specimens, and contemporary biotech art.
 
 That tension became especially compelling to me through a set of recurring images and questions:
+
 - random pieces of meat and extracted forms,
 - taxidermy animals on walls,
 - the moose head as a display object,
@@ -80,6 +83,7 @@ So this project is partly about **visualization**, but it is also about **framin
 A few key inspirations include:
 
 #### Medical / anatomical visualization
+
 - **Visible Human Project** — National Library of Medicine / NIH Open Data Portal  
   https://www.nlm.nih.gov/research/visible/visible_human.html
 - **DICOM converted images for the NLM Visible Human Project collection**
@@ -90,6 +94,7 @@ A few key inspirations include:
 - **Visible Korean based on true color sectioned images for making realistic digital human**
 
 #### Artistic / conceptual references
+
 - Francesco Albano  
   https://medinart.eu/works/francesco-albano/
 - Patricia Piccinini and biotechnology / hybrid-body art  
@@ -99,6 +104,7 @@ A few key inspirations include:
   https://github.com/jasonwebb/morphogenesis-resources
 
 #### Time / volume / slicing references
+
 - **Stylized Video Cubes** (Michael Cohen et al., 2002)
 - **Image Stacks** (2003)
 - **Video Cubism** (Sidney Fels, Kenji Mase & Eric Lee, 1999)
@@ -132,6 +138,7 @@ A few key inspirations include:
 This project grew gradually from a simple multi-planar reconstruction (MPR) viewer into a more layered environment for visual experimentation.
 
 Some major additions included:
+
 - multi-volume support (main + gradient + skeleton),
 - split and multi-panel viewing modes,
 - curved slicing planes,
@@ -146,18 +153,21 @@ Some major additions included:
 One of the biggest challenges was that the **CPU path** and the **GPU path** did not originally behave the same way.
 
 The CPU path tended to:
+
 1. sample the volume,
 2. build panel images,
 3. compose those panels together,
 4. then draw the final image.
 
 The GPU path often tried to:
+
 1. draw slices directly to the screen,
 2. and then layer UI or effects afterward.
 
 This mismatch caused problems: some view modes worked in CPU but not GPU, side panels could appear blank, and “auto” fallback behavior became fragile.
 
 To improve that, later versions moved toward a **two-pass GPU compositor**:
+
 - **Pass 1:** render each slice into an offscreen texture
 - **Pass 2:** composite those textures into the final panel layout
 
@@ -213,6 +223,7 @@ This challenge taught me that for interactive visualization systems, **consisten
 ## Features in `mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py`
 
 ### Core viewing modes
+
 - **Single view** — standard slice through the main volume
 - **Single gray / invert variants**
 - **Axis view** — three orthogonal panels
@@ -222,6 +233,7 @@ This challenge taught me that for interactive visualization systems, **consisten
 - **Slice seed board** — collect slice views into a board-like display
 
 ### Curve and projection tools
+
 - curved plane amplitude and radius controls
 - side curve panels showing:
   - U section
@@ -231,6 +243,7 @@ This challenge taught me that for interactive visualization systems, **consisten
 - custom plane orientations and oblique slicing
 
 ### Volume interventions
+
 - 3D objects that can act as:
   - **maskers**
   - **blockers**
@@ -238,12 +251,14 @@ This challenge taught me that for interactive visualization systems, **consisten
   - **shifters**
 
 ### Image and frame FX
+
 - frame / screen-space transformation modes
 - pixel-grid-based reorganizations
 - fragmenting, slicing, and stylization tools
 - prototype computational effects inspired by growth, skeletonization, and material distortion
 
 ### Analysis and automation
+
 - slice heuristics (filled area, blob count, circle-like blobs, tissue-like classification)
 - interest scoring and recommended viewpoints
 - timeline / waypoint recording
@@ -257,6 +272,7 @@ This challenge taught me that for interactive visualization systems, **consisten
 Below is a simplified control guide based on the current v23 script. If you update the file later, this section may need to be edited to match.
 
 ### Keyboard
+
 - **T** — cycle view mode
 - **H** — hide/show mouse cursor
 - **Y** — toggle live heuristics/blob counters
@@ -275,7 +291,9 @@ Below is a simplified control guide based on the current v23 script. If you upda
 - **X** — toggle 3Dconnexion input
 
 ### Built-in UI
+
 The built-in UI includes several top-level panels / tabs:
+
 - **Move / Brush**
 - **Timeline**
 - **Screen FX**
@@ -286,6 +304,7 @@ The built-in UI includes several top-level panels / tabs:
 There is also a **Hide UI** button, and when all overlays are hidden a small **Show UI** button appears in the corner.
 
 ### Typical interaction flow
+
 1. Load your volumes.
 2. Start in **Single** or **MultiVol** mode.
 3. Adjust orientation and slice position.
@@ -301,6 +320,7 @@ There is also a **Hide UI** button, and when all overlays are hidden a small **S
 Below are placeholder gallery sections. Put your final images into the `images/` folder and GIFs into the `gifs/` folder.
 
 ### 1. Multi-volume viewing
+
 <table>
   <tr>
     <td align="center" width="33%"><img src="images/gallery_multivol_1.png" width="260"></td>
@@ -315,6 +335,7 @@ Below are placeholder gallery sections. Put your final images into the `images/`
 </table>
 
 ### 2. Curved plane exploration
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/gallery_curved_1.png" width="400"></td>
@@ -327,6 +348,7 @@ Below are placeholder gallery sections. Put your final images into the `images/`
 </table>
 
 ### 3. Object interventions and screen FX
+
 <table>
   <tr>
     <td align="center" width="33%"><img src="images/gallery_objects_1.png" width="260"></td>
@@ -341,6 +363,7 @@ Below are placeholder gallery sections. Put your final images into the `images/`
 </table>
 
 ### 4. Process / UI / timeline
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/gallery_ui_1.png" width="400"></td>
@@ -389,6 +412,7 @@ python mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py
 ```
 
 Make sure your volume paths inside the script point to the correct `.npy` data for:
+
 - the **main color volume**,
 - the **gradient/distance volume**,
 - and the **skeleton volume**.
@@ -400,6 +424,7 @@ Make sure your volume paths inside the script point to the correct `.npy` data f
 This project is not only a tool for viewing anatomy more clearly. It is also an experiment in how technical visualization can become a space for questioning the body.
 
 The original medical visualization projects aimed to produce accurate knowledge through visibility. This project keeps that technical lineage, but it uses the same logic to ask different questions:
+
 - What does it mean to stack the slices of a body?
 - What happens when anatomy is projected like a map or cut like a butcher chart?
 - How does a specimen become an image, and how does an image become an object?
@@ -412,6 +437,7 @@ In that sense, the viewer is both a **visualization system** and a **site of int
 ## References
 
 ### Medical / anatomy / imaging
+
 - National Library of Medicine. **Visible Human Project**.  
   https://www.nlm.nih.gov/research/visible/visible_human.html
 - National Institutes of Health / NLM Open Data Portal. **Visible Human Project**.  
@@ -422,10 +448,11 @@ In that sense, the viewer is both a **visualization system** and a **site of int
 - **SofaAPAPI-Unity3D - Interactive Virtual Simulation of Ultrasound**.
 - **OsiriX DICOM Viewer**.  
   https://www.osirix-viewer.com/
-- **Visible Korean based on true color sectioned images for making realistic digital human, twenty years’ record: a review**. *Surgical and Radiologic Anatomy*.
+- **Visible Korean based on true color sectioned images for making realistic digital human, twenty years’ record: a review**. _Surgical and Radiologic Anatomy_.
 - **Digital Fish Library - Species: Abudefduf troschelii (Panamic Sergeant Major)**.
 
 ### Computational / visualization / morphogenesis
+
 - Jason Webb. **Morphogenesis Resources**.  
   https://github.com/jasonwebb/morphogenesis-resources
 - Michael Cohen et al. **Stylized Video Cubes** (2002).
@@ -435,6 +462,7 @@ In that sense, the viewer is both a **visualization system** and a **site of int
 - Chris O'Shea. **Out of Bounds**.
 
 ### Artistic references
+
 - Francesco Albano.  
   https://medinart.eu/works/francesco-albano/
 - QAGOMA. **Looking at Patricia Piccinini’s monsters looking at us**.  
@@ -443,14 +471,3 @@ In that sense, the viewer is both a **visualization system** and a **site of int
   https://thoughtsbecomewords.com/2018/07/22/curious-affection-hybrids-of-patricia-piccininis-biotechnology-art/
 
 ---
-
-## Notes
-
-This README uses placeholder image names so you can quickly drop final documentation assets into:
-- **`images/`** for still images
-- **`gifs/`** for animated captures
-
-If you want, the next step could be:
-1. turning this into a more polished **final README**,
-2. trimming it for a class/project page,
-3. or rewriting it in a more **artistic** or more **technical** voice depending on where you want to present it.
