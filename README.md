@@ -1,473 +1,407 @@
-# human-body-visualization
+# Slices of Meat?
+
+### *MPR Multi-Volume Full FX Objects v23 UI Curve Panels*
 
 ![](images/hero_image.png)
 <br>
 
-**An interactive volume-slicing and visualization environment for exploring the body as image, specimen, object, and projection.**
-
-This project centers on the script **`mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py`**, an experimental viewer for navigating a 3D volume through multiple kinds of slices, transformed views, curve-based cutting planes, multi-volume comparisons, object-based interventions, and image-space effects. It combines a technical interest in medical/scientific visualization with a conceptual interest in meat, anatomy, taxidermy, spectacle, and the politics of displaying bodies.
-
-At a basic level, the tool lets you:
-
-- load a **main color volume**, plus optional **skeleton** and **gradient/distance** volumes,
-- inspect the data through **single**, **axis**, **local oblique**, **multi-volume**, and **curved-plane** views,
-- apply **screen-space FX** and image transformations,
-- place **3D objects** that act like blockers, maskers, reflectors, or shifters,
-- record and play back **camera waypoints/timelines**,
-- and analyze slices using lightweight **heuristics** such as filled area, blob count, and flesh/bone-like balance.
+**Hero image placeholder:** a full-screen view of the software showing a colored anatomical/meat volume, a curved slicing plane, and the side curve inspection panels.
 
 <table>
   <tr>
     <td align="center" width="100%">
-      <img src="gifs/hero_demo.gif" width="800"><br>
+      <img src="gifs/hero_demo.gif" width="850"><br>
     </td>
   </tr>
   <tr>
     <td align="left" width="100%">
-      Hero video / GIF placeholder. Replace with a short capture showing the main viewer, curved-plane mode, and multi-volume comparison.
+      <strong>Hero video placeholder.</strong> Suggested capture: orbit through the color volume, switch to multi-volume view, open the curved-plane editor, and hide/show the UI for a clean exhibition-style shot.
     </td>
   </tr>
 </table>
 
 ---
 
-## Project overview
+## Abstract
 
-This work began as part of a broader **human visualization project**. The original intent of many anatomical visualization systems—such as the Visible Human Project and related medical imaging tools—was to improve medical knowledge by making the body viewable, measurable, and navigable. My interest shifts that goal slightly. Instead of only asking **how to see the body correctly**, I am also asking:
+**Slices of Meat?** is an experimental visualization system for navigating stacked anatomical/meat imagery as a spatial, sculptural, and cultural object. Built around `mpr_multivolume.py`, the project loads a main color volume alongside optional skeleton and gradient-distance volumes, then allows the viewer to cut, bend, compare, mask, transform, and recompose the body through a set of interactive viewing modes.
 
-- **How else can the body be seen?**
-- What happens when anatomical data is treated like a sculptural or cinematic material?
-- What kinds of meaning emerge when we view a body through the logics of butcher diagrams, taxidermy displays, projection systems, or image stacks?
-- How do scientific displays and cultural displays overlap?
+The work borrows the visual language of medical imaging, butcher diagrams, taxidermy display, projection mapping, and computational image processing. Instead of treating anatomical visualization only as a path toward accuracy, the tool asks what happens when slices become material: hung on walls, packed into grids, inflated, curved, reflected, blocked, or reorganized into strange views of flesh.
 
-In this project, slices are not only diagnostic images. They can also feel like:
-
-- butchered sections,
-- wall-mounted trophies,
-- inflated or altered flesh,
-- spatial projections,
-- and interfaces for speculation about how bodies are represented.
-
-The project pulls together influences from:
-
-- **medical visualization**,
-- **DICOM / visible human datasets**,
-- **XR anatomy tools**,
-- **video slicing / spacetime imaging**,
-- **projection systems**,
-- and **bio-art / hybrid-body art practices**.
+The project sits between **scientific instrument**, **image-making system**, and **speculative exhibition interface**. It is both a viewer and a way of staging the body.
 
 ---
 
-## Motivation
+## Project statement
 
-I was motivated by a tension between two ways of looking at bodies.
+The original ambition of many human visualization projects was to make the body legible. The body was dissected, photographed, scanned, registered, segmented, and reconstructed so that medical knowledge could become more precise. The **Visible Human Project**, for example, made public cross-sectional cryosection, CT, and MRI images of human bodies as a reference for anatomy, medical imaging, and computational research.
 
-On one side, there is the scientific and pedagogical ambition behind projects like the **Visible Human Project**: to dissect, digitize, and visualize the human body in order to improve medical knowledge and make anatomy more accessible and correct. On the other side, there is a cultural history of displaying bodies and animal forms through hunting trophies, butcher charts, taxidermy, preserved specimens, and contemporary biotech art.
+My project begins from that lineage, but moves toward a different question:
 
-That tension became especially compelling to me through a set of recurring images and questions:
+> **What if the goal is not only to see the body correctly, but to see how many cultural and computational forms a body can take?**
 
-- random pieces of meat and extracted forms,
-- taxidermy animals on walls,
-- the moose head as a display object,
-- butcher sections and meat cuts,
-- farmed animals versus wild animals,
-- genetically modified or artificially inflated animals,
-- cosmetic surgery, steroids, enhancement, and sculpted flesh,
-- and the strange space between a scientific specimen and a symbolic body.
+In this viewer, a slice is not just a medical cross-section. It can become a butcher cut, a projection, a specimen, a trophy, a wall object, a screen surface, or a distorted memory of a body. The tool treats volume data as an unstable material: one that can be opened, folded, recomposed, and misread.
 
-So this project is partly about **visualization**, but it is also about **framing**. It asks what changes when the body is re-sliced, projected, inflated, curved, stacked, or aestheticized.
+I was thinking about the difference between a body used for science and a body used as a display object. A taxidermy moose head on a wall is not only an animal; it is a token of hunting, ownership, conquest, memory, decoration, and control. A medical volume is also a form of display. It claims a different purpose—education, accuracy, diagnosis—but it still transforms a body into an object that can be viewed, rotated, sliced, and possessed through vision.
 
-### Inspirations
+This project explores the uneasy space between those two forms of looking.
 
-A few key inspirations include:
+---
 
-#### Medical / anatomical visualization
+## Motivation and visual research
 
-- **Visible Human Project** — National Library of Medicine / NIH Open Data Portal  
-  https://www.nlm.nih.gov/research/visible/visible_human.html
-- **DICOM converted images for the NLM Visible Human Project collection**
-- **Visible Human Project: normal anatomy | e-Anatomy**
-- **CvhSlicer 2.0: Immersive and Interactive Visualization of Chinese Visible Human Data in XR**
-- **OsiriX DICOM Viewer**
-- **SofaAPAPI-Unity3D - Interactive Virtual Simulation of Ultrasound**
-- **Visible Korean based on true color sectioned images for making realistic digital human**
+The project grew from several overlapping questions:
 
-#### Artistic / conceptual references
+- What happens when pieces of meat are treated like landscapes or architectural sections?
+- What is the difference between a scientific specimen, a butchered animal, and a trophy on a wall?
+- How do farmed bodies, genetically modified animals, artificial inflation, steroids, plastic surgery, and cosmetic alteration complicate the idea of a “natural” body?
+- What does it mean to stack slices of flesh into a volume and then ask a computer to find the best view?
+- Can a medical visualization interface become an image-making system instead of only an anatomy tool?
 
-- Francesco Albano  
-  https://medinart.eu/works/francesco-albano/
-- Patricia Piccinini and biotechnology / hybrid-body art  
-  https://www.qagoma.qld.gov.au/stories/looking-at-patricia-piccininis-monsters-looking-at-us/  
-  https://thoughtsbecomewords.com/2018/07/22/curious-affection-hybrids-of-patricia-piccininis-biotechnology-art/
-- Morphogenesis resources  
-  https://github.com/jasonwebb/morphogenesis-resources
-
-#### Time / volume / slicing references
-
-- **Stylized Video Cubes** (Michael Cohen et al., 2002)
-- **Image Stacks** (2003)
-- **Video Cubism** (Sidney Fels, Kenji Mase & Eric Lee, 1999)
-- **KHRONOS PROJECTOR (2004)** — Alvaro Cassinelli
-- **Out of Bounds** — Chris O'Shea
-- map and projection logics such as **Mercator projection onto a cylinder**
+The resulting software creates a space where the user can move through the volume, compare tissue-like structures, generate strange projections, and search for views that feel visually or conceptually charged.
 
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="images/inspiration_board_1.png" width="420"><br>
+      <img src="images/inspiration_medical_archive.png" width="420"><br>
     </td>
     <td align="center" width="50%">
-      <img src="images/inspiration_board_2.png" width="420"><br>
+      <img src="images/inspiration_taxidermy_meat.png" width="420"><br>
     </td>
   </tr>
   <tr>
     <td align="left" width="50%">
-      Placeholder: an inspiration board of anatomical/medical references.
+      <strong>Placeholder:</strong> medical visualization, cryosection images, anatomy atlases, DICOM viewers, Visible Human / Visible Korean references.
     </td>
     <td align="left" width="50%">
-      Placeholder: an inspiration board of artistic and conceptual references.
+      <strong>Placeholder:</strong> butcher charts, taxidermy, farm animals, artificial bodies, bio-art, hybrid creatures, meat display.
     </td>
   </tr>
 </table>
 
 ---
 
-## Development story
+## Conceptual references
 
-This project grew gradually from a simple multi-planar reconstruction (MPR) viewer into a more layered environment for visual experimentation.
+### Visible bodies
 
-Some major additions included:
+The project is indebted to the history of digital anatomical datasets and sectioned-image projects. The **Visible Human Project** transformed cadaveric bodies into complete digital image volumes. **Visible Korean** and related visible-body projects extend this lineage through true-color, high-resolution sectioned images used for anatomical research, education, and virtual human models.
 
-- multi-volume support (main + gradient + skeleton),
-- split and multi-panel viewing modes,
-- curved slicing planes,
-- waypoint recording and playback,
-- object-based modifiers in the volume space,
-- heuristics and interest-scoring for slices,
-- frame capture and sorting,
-- and a built-in UI system that replaced earlier ImGui experiments in some versions.
+These projects make the body available as data. My project asks how that data can also become an aesthetic and critical material.
 
-### One key challenge: making the GPU and CPU viewers behave consistently
+### Video cubes, time cubes, and slicing surfaces
 
-One of the biggest challenges was that the **CPU path** and the **GPU path** did not originally behave the same way.
+The project also connects to computational artworks and visualization systems that treat image sequences as volumes. **Video Cubism** allowed users to slice through a video cube using arbitrary planes and curved surfaces. **Stylized Video Cubes** treated video as a space-time volume for non-photorealistic rendering. **Khronos Projector** turned touch into a way of deforming time inside a video surface.
 
-The CPU path tended to:
+Those projects helped me think about the slice not as a fixed medical convention, but as an interface: a moving surface that can cut through data, time, memory, and image.
 
-1. sample the volume,
-2. build panel images,
-3. compose those panels together,
-4. then draw the final image.
+### Hybrid bodies and speculative flesh
 
-The GPU path often tried to:
+Artists such as **Francesco Albano** and **Patricia Piccinini** influenced the project’s interest in flesh that appears altered, synthetic, tender, grotesque, or engineered. Piccinini’s hybrid creatures are especially relevant because they are simultaneously biological, artificial, vulnerable, and designed. They make the viewer question what kind of body they are looking at—and what obligations that act of looking creates.
 
-1. draw slices directly to the screen,
-2. and then layer UI or effects afterward.
+---
 
-This mismatch caused problems: some view modes worked in CPU but not GPU, side panels could appear blank, and “auto” fallback behavior became fragile.
+## The software as an exhibition interface
 
-To improve that, later versions moved toward a **two-pass GPU compositor**:
+`mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py` is not only a program for inspecting a volume. It is a small studio for producing images from a body-like dataset.
 
-- **Pass 1:** render each slice into an offscreen texture
-- **Pass 2:** composite those textures into the final panel layout
+The interface supports:
 
-That refactor made the rendering logic more consistent and easier to debug.
+- **single slice viewing** for basic inspection,
+- **axis and local oblique views** for moving through the volume from multiple directions,
+- **multi-volume comparison** between color, gradient-distance, and skeleton data,
+- **curved-plane viewing** where a slice becomes a bendable surface,
+- **side curve inspection panels** for reading the curve from U, V, and surface views,
+- **3D object interventions** that mask, block, reflect, or shift the slice,
+- **screen-space transformations** that reorganize the image,
+- **timeline controls** for recording paths and revisiting views,
+- and **heuristics** that estimate visual qualities such as filled area, blob count, and interest score.
 
-### A simple diagram of the problem
+The interface becomes a kind of dissection table, projection surface, and editing desk at the same time.
 
 <table>
   <tr>
     <td align="center" width="100%">
-      <img src="images/render_pipeline_diagram.png" width="800"><br>
+      <img src="images/interface_overview.png" width="850"><br>
     </td>
   </tr>
   <tr>
     <td align="left" width="100%">
-      Placeholder diagram: CPU compositor vs. GPU compositor. Show how slices are sampled, composed, and then displayed.
+      <strong>Placeholder:</strong> annotated overview of the software interface showing the main slice, side curve panels, top toolbar, object controls, timeline, and heuristic panel.
     </td>
   </tr>
 </table>
 
-#### Pipeline sketch
+---
+
+## A key technical problem: making the slice behave like a surface
+
+A flat MPR viewer is relatively direct: choose a point in the volume, choose two axes for the image plane, sample the voxel data, and display the result. But a curved plane is less obvious. It is not just a rectangle passing through the volume. It is a surface that bends away from its own base plane.
+
+The curved-plane editor solves this by treating the slice as a parameterized surface. Each screen pixel maps to a local coordinate on the plane, and that coordinate is displaced along the plane normal by a curve function.
 
 ```text
-Volume Data (main / gradient / skeleton)
-        |
-        v
-Sampling Stage
-  - single plane
-  - axis planes
-  - local oblique planes
-  - curved plane
-        |
-        v
-Panel Composition
-  - single full screen
-  - 3-up split screen
-  - multi-volume comparison
-  - side curve inspection panels
-        |
-        v
-Optional FX / Object Interaction
-  - mask / block / reflect / shift
-  - fragment / pixel / branch-style effects
-        |
-        v
-UI / Timeline / Heuristics / Capture
+screen pixel
+    ↓
+local coordinates (u, v)
+    ↓
+base plane position
+    ↓
+curve displacement along normal
+    ↓
+3D volume coordinate
+    ↓
+sampled voxel color
 ```
 
-This challenge taught me that for interactive visualization systems, **consistency of the render pipeline** is as important as adding new features. A tool can have many features, but if the rendering architecture is unstable, those features become difficult to trust or extend.
-
----
-
-## Features in `mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py`
-
-### Core viewing modes
-
-- **Single view** — standard slice through the main volume
-- **Single gray / invert variants**
-- **Axis view** — three orthogonal panels
-- **Local oblique view** — oblique slicing relative to the current plane
-- **Multi-volume view** — compare main / gradient / skeleton side by side
-- **Curved plane editor** — use curved sampling surfaces instead of only flat planes
-- **Slice seed board** — collect slice views into a board-like display
-
-### Curve and projection tools
-
-- curved plane amplitude and radius controls
-- side curve panels showing:
-  - U section
-  - V section
-  - curved surface preview
-- gizmo / corner preview
-- custom plane orientations and oblique slicing
-
-### Volume interventions
-
-- 3D objects that can act as:
-  - **maskers**
-  - **blockers**
-  - **reflectors**
-  - **shifters**
-
-### Image and frame FX
-
-- frame / screen-space transformation modes
-- pixel-grid-based reorganizations
-- fragmenting, slicing, and stylization tools
-- prototype computational effects inspired by growth, skeletonization, and material distortion
-
-### Analysis and automation
-
-- slice heuristics (filled area, blob count, circle-like blobs, tissue-like classification)
-- interest scoring and recommended viewpoints
-- timeline / waypoint recording
-- playback and looping
-- frame capture and export helpers
-
----
-
-## Controls
-
-Below is a simplified control guide based on the current v23 script. If you update the file later, this section may need to be edited to match.
-
-### Keyboard
-
-- **T** — cycle view mode
-- **H** — hide/show mouse cursor
-- **Y** — toggle live heuristics/blob counters
-- **F1** — hide/show UI
-- **F2** — hide/show top-right gizmo
-- **F3** — suggest/apply interesting next view
-- **F4** — start/stop 24fps capture
-- **F5** — toggle blob debug
-- **F6** — find blob-dense / low-interest view
-- **F7 / F8** — cycle color filter mode / filter target
-- **F9** — cycle display variant
-- **F10** — toggle aux-from-main
-- **F11** — cycle frame transform
-- **F12** — toggle Brownian auto motion
-- **M** — toggle heap modulation
-- **X** — toggle 3Dconnexion input
-
-### Built-in UI
-
-The built-in UI includes several top-level panels / tabs:
-
-- **Move / Brush**
-- **Timeline**
-- **Screen FX**
-- **Objects**
-- **Plane**
-- **Heuristics**
-
-There is also a **Hide UI** button, and when all overlays are hidden a small **Show UI** button appears in the corner.
-
-### Typical interaction flow
-
-1. Load your volumes.
-2. Start in **Single** or **MultiVol** mode.
-3. Adjust orientation and slice position.
-4. Switch to **Curved** mode to inspect the volume using a curved plane.
-5. Use the **Plane** tab to change curve amplitude/radius.
-6. Turn on **SideViews** to inspect U/V/curved previews.
-7. Record waypoints and capture images if needed.
-
----
-
-## Gallery
-
-Below are placeholder gallery sections. Put your final images into the `images/` folder and GIFs into the `gifs/` folder.
-
-### 1. Multi-volume viewing
+In practical terms, the system turns a flat image plane into a deformable probe. This matters conceptually because the viewer no longer simply cuts the body: the viewer presses, bends, and reshapes the surface of vision.
 
 <table>
   <tr>
-    <td align="center" width="33%"><img src="images/gallery_multivol_1.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_multivol_2.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_multivol_3.png" width="260"></td>
+    <td align="center" width="100%">
+      <img src="images/curved_plane_diagram.png" width="800"><br>
+    </td>
   </tr>
   <tr>
-    <td align="left">Main / gradient / skeleton comparison.</td>
-    <td align="left">Another multi-volume example.</td>
-    <td align="left">A view emphasizing structural contrast.</td>
-  </tr>
-</table>
-
-### 2. Curved plane exploration
-
-<table>
-  <tr>
-    <td align="center" width="50%"><img src="images/gallery_curved_1.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/gallery_curved_2.png" width="400"></td>
-  </tr>
-  <tr>
-    <td align="left">Curved slicing plane through the volume.</td>
-    <td align="left">U/V side previews or alternative curve shapes.</td>
-  </tr>
-</table>
-
-### 3. Object interventions and screen FX
-
-<table>
-  <tr>
-    <td align="center" width="33%"><img src="images/gallery_objects_1.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_fx_1.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_fx_2.png" width="260"></td>
-  </tr>
-  <tr>
-    <td align="left">3D object interaction with slice images.</td>
-    <td align="left">Frame/screen FX example.</td>
-    <td align="left">Another transformed slice output.</td>
-  </tr>
-</table>
-
-### 4. Process / UI / timeline
-
-<table>
-  <tr>
-    <td align="center" width="50%"><img src="images/gallery_ui_1.png" width="400"></td>
-    <td align="center" width="50%"><img src="gifs/gallery_timeline.gif" width="400"></td>
-  </tr>
-  <tr>
-    <td align="left">Built-in UI with plane and heuristics panels.</td>
-    <td align="left">Timeline or playback interaction.</td>
+    <td align="left" width="100%">
+      <strong>Diagram placeholder:</strong> show a volume cube, a flat slicing plane, then a curved slicing plane displaced along the normal. Label U, V, normal, amplitude, and radius.
+    </td>
   </tr>
 </table>
 
 ---
 
-## Folder structure
+## Development note: from tool to image system
+
+A major development challenge was keeping the viewer fast while the project became more visually ambitious. Early versions relied heavily on CPU-side sampling and image construction. This was reliable but slow, especially when drawing multiple panels or applying effects. Later versions moved toward a more consistent GPU compositor: slices are rendered into offscreen textures and then composed into the final display.
+
+This shift changed the structure of the project. Instead of thinking of the software as a single viewer, I began to think of it as a series of passes:
+
+```text
+volume data → slice sampling → panel composition → image effects → UI / capture
+```
+
+That pipeline made the project easier to extend. It also clarified the artistic structure: every view is a constructed image, not simply a transparent window into data.
+
+---
+
+## Gallery of visualizations
+
+Replace these placeholders with final captures from the `images/` and `gifs/` folders.
+
+### Multi-volume comparisons
+
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="images/gallery_multivolume_color.png" width="260"></td>
+    <td align="center" width="33%"><img src="images/gallery_multivolume_gradient.png" width="260"></td>
+    <td align="center" width="33%"><img src="images/gallery_multivolume_skeleton.png" width="260"></td>
+  </tr>
+  <tr>
+    <td align="left">Color volume as flesh-like image.</td>
+    <td align="left">Gradient-distance view as thickness / density cue.</td>
+    <td align="left">Skeleton view as extracted internal scaffold.</td>
+  </tr>
+</table>
+
+### Curved slicing and projection
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/gallery_curved_surface_1.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/gallery_curved_surface_2.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="left">A curved surface cutting through the volume.</td>
+    <td align="left">A side-panel view showing the curved section as a spatial surface.</td>
+  </tr>
+</table>
+
+### Butchered grids / reorganized flesh
+
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="images/gallery_grid_sort_1.png" width="260"></td>
+    <td align="center" width="33%"><img src="images/gallery_cut_fx_1.png" width="260"></td>
+    <td align="center" width="33%"><img src="images/gallery_blob_pack_1.png" width="260"></td>
+  </tr>
+  <tr>
+    <td align="left">Pixel or slice sorting by value, hue, area, or density.</td>
+    <td align="left">Cut and drift effects that separate the image into meat-like fragments.</td>
+    <td align="left">Packed blobs as a speculative butcher chart or wall arrangement.</td>
+  </tr>
+</table>
+
+### Object interventions
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/gallery_object_masker.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/gallery_object_reflector.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="left">A 3D object masking a region of the sampled body.</td>
+    <td align="left">A reflector/shifter object altering the visible slice.</td>
+  </tr>
+</table>
+
+### Timeline and capture
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="gifs/gallery_timeline_path.gif" width="400"></td>
+    <td align="center" width="50%"><img src="images/gallery_capture_sheet.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="left">Timeline playback through a recorded camera path.</td>
+    <td align="left">Captured frames sorted from largest filled area to smallest.</td>
+  </tr>
+</table>
+
+---
+
+## Installation / presentation setup
+
+Suggested folder structure:
 
 ```text
 project/
 ├── mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py
+├── README.md
 ├── images/
 │   ├── hero_image.png
-│   ├── inspiration_board_1.png
-│   ├── inspiration_board_2.png
-│   ├── render_pipeline_diagram.png
-│   ├── gallery_multivol_1.png
-│   ├── gallery_multivol_2.png
-│   ├── gallery_multivol_3.png
-│   ├── gallery_curved_1.png
-│   ├── gallery_curved_2.png
-│   ├── gallery_objects_1.png
-│   ├── gallery_fx_1.png
-│   ├── gallery_fx_2.png
-│   └── gallery_ui_1.png
+│   ├── interface_overview.png
+│   ├── curved_plane_diagram.png
+│   ├── gallery_multivolume_color.png
+│   ├── gallery_multivolume_gradient.png
+│   ├── gallery_multivolume_skeleton.png
+│   ├── gallery_curved_surface_1.png
+│   ├── gallery_curved_surface_2.png
+│   ├── gallery_grid_sort_1.png
+│   ├── gallery_cut_fx_1.png
+│   ├── gallery_blob_pack_1.png
+│   ├── gallery_object_masker.png
+│   ├── gallery_object_reflector.png
+│   └── gallery_capture_sheet.png
 └── gifs/
     ├── hero_demo.gif
-    └── gallery_timeline.gif
+    └── gallery_timeline_path.gif
 ```
 
----
-
-## Running the script
-
-Example:
+Run the project:
 
 ```bash
 python mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py
 ```
 
-Make sure your volume paths inside the script point to the correct `.npy` data for:
-
-- the **main color volume**,
-- the **gradient/distance volume**,
-- and the **skeleton volume**.
+The script expects `.npy` volume files for the main color volume and optional auxiliary volumes. Update the paths in the script to match your local dataset.
 
 ---
 
-## What this project is trying to do
+## Controls / interaction guide
 
-This project is not only a tool for viewing anatomy more clearly. It is also an experiment in how technical visualization can become a space for questioning the body.
+### Core keys
 
-The original medical visualization projects aimed to produce accurate knowledge through visibility. This project keeps that technical lineage, but it uses the same logic to ask different questions:
+| Key | Action |
+| --- | --- |
+| `T` | Cycle view mode |
+| `H` | Hide/show mouse cursor |
+| `Y` | Toggle analysis / heuristics so blob counters do not run every frame |
+| `F1` | Hide/show UI |
+| `F2` | Hide/show gizmo |
+| `F3` | Recommend or apply an interesting next view |
+| `F4` | Start/stop 24 fps capture |
+| `F5` | Toggle blob debug overlay |
+| `F6` | Search for blob-dense / low-interest view |
+| `F7 / F8` | Cycle color filter mode / target |
+| `F9` | Cycle display variant |
+| `F10` | Toggle aux-from-main mode |
+| `F11` | Cycle frame transform |
+| `F12` | Toggle Brownian auto motion |
 
-- What does it mean to stack the slices of a body?
-- What happens when anatomy is projected like a map or cut like a butcher chart?
-- How does a specimen become an image, and how does an image become an object?
-- Where is the line between the scientific body, the hunted body, the consumed body, and the designed body?
+### UI tabs
 
-In that sense, the viewer is both a **visualization system** and a **site of interpretation**.
+| Tab | Purpose |
+| --- | --- |
+| **Move / Brush** | Navigation, slicing, cursor and brush-like interaction |
+| **Timeline** | Waypoints, playback, camera paths, looping |
+| **Screen FX** | Image-space transformations and fragment effects |
+| **Objects** | Add and edit blockers, maskers, reflectors, and shifters |
+| **Plane** | Curved-plane settings, amplitude, radius, side views |
+| **Heuristics** | Blob count, fill area, interest score, and debugging |
+
+For exhibition display, use **Hide UI** or `F1` to move between the working interface and a cleaner projected image.
+
+---
+
+## Possible exhibition format
+
+The project could be installed as:
+
+1. **Interactive station** — one monitor with the live viewer and controller input.
+2. **Projection wall** — a large clean output view with the UI hidden.
+3. **Slice archive wall** — printed or projected captures sorted by area, density, skeleton relation, or interest score.
+4. **Process table** — diagrams showing how the curved plane samples the volume.
+5. **Reference wall** — medical visualization, taxidermy, butcher charts, bio-art, and video-cube references.
+
+The ideal presentation would let viewers move between the clinical and the strange: first understanding that the material is a navigable body-like volume, then discovering how quickly that body can become a projection, ornament, trophy, map, or synthetic flesh object.
 
 ---
 
 ## References
 
-### Medical / anatomy / imaging
+### Anatomical and medical visualization
 
-- National Library of Medicine. **Visible Human Project**.  
-  https://www.nlm.nih.gov/research/visible/visible_human.html
-- National Institutes of Health / NLM Open Data Portal. **Visible Human Project**.  
-  https://openi.nlm.nih.gov/
-- **Visible Human Project: normal anatomy | e-Anatomy**.  
-  https://www.imaios.com/en/e-anatomy
-- **CvhSlicer 2.0: Immersive and Interactive Visualization of Chinese Visible Human Data in XR**.
-- **SofaAPAPI-Unity3D - Interactive Virtual Simulation of Ultrasound**.
-- **OsiriX DICOM Viewer**.  
-  https://www.osirix-viewer.com/
-- **Visible Korean based on true color sectioned images for making realistic digital human, twenty years’ record: a review**. _Surgical and Radiologic Anatomy_.
-- **Digital Fish Library - Species: Abudefduf troschelii (Panamic Sergeant Major)**.
+1. National Library of Medicine. **Visible Human Project**.  
+   https://www.nlm.nih.gov/research/visible/visible_human.html
 
-### Computational / visualization / morphogenesis
+2. National Library of Medicine. **NLM Digital Projects**.  
+   https://www.nlm.nih.gov/digitalprojects.html
 
-- Jason Webb. **Morphogenesis Resources**.  
-  https://github.com/jasonwebb/morphogenesis-resources
-- Michael Cohen et al. **Stylized Video Cubes** (2002).
-- **Image Stacks** (2003).
-- Sidney Fels, Kenji Mase, Eric Lee. **Video Cubism** (1999).
-- Alvaro Cassinelli. **KHRONOS PROJECTOR** (2004).
-- Chris O'Shea. **Out of Bounds**.
+3. Kim, Chung Yoh; Chung, Min Suk; Park, Jin Seo. **Visible Korean based on true color sectioned images for making realistic digital human, twenty years’ record: a review.** *Surgical and Radiologic Anatomy*, 2024.  
+   https://pubmed.ncbi.nlm.nih.gov/38717503/
 
-### Artistic references
+4. Chung, Beom Sun; Park, Jin Seo. **Real-Color Volume Models Made from Real-Color Sectioned Images of Visible Korean.** *Journal of Korean Medical Science*, 2019.  
+   https://pmc.ncbi.nlm.nih.gov/articles/PMC6417999/
 
-- Francesco Albano.  
-  https://medinart.eu/works/francesco-albano/
-- QAGOMA. **Looking at Patricia Piccinini’s monsters looking at us**.  
-  https://www.qagoma.qld.gov.au/stories/looking-at-patricia-piccininis-monsters-looking-at-us/
-- Thoughts Become Words. **Curious Affection: hybrids of Patricia Piccinini’s biotechnology art**.  
-  https://thoughtsbecomewords.com/2018/07/22/curious-affection-hybrids-of-patricia-piccininis-biotechnology-art/
+5. OsiriX. **DICOM Viewer.**  
+   https://www.osirix-viewer.com/
+
+6. IMAIOS. **Visible Human Project: normal anatomy / e-Anatomy.**  
+   https://www.imaios.com/en/e-anatomy
+
+### Video volumes, projection, and computational image systems
+
+7. Fels, Sidney; Mase, Kenji. **Interactive Video Cubism.** NPIV, 1999.  
+   https://www.sciweavers.org/node/164045
+
+8. Klein, Allison W.; Sloan, Peter-Pike J.; Finkelstein, Adam; Cohen, Michael F. **Stylized Video Cubes.** SCA, 2002.  
+   https://doi.org/10.1145/545261.545264
+
+9. Cohen, Michael F.; Colburn, Alex; Drucker, Steven. **Image Stacks.** Microsoft Research Technical Report, 2003.  
+   https://www.microsoft.com/en-us/research/publication/image-stacks/
+
+10. Cassinelli, Alvaro. **KHRONOS PROJECTOR.** 2004.  
+    https://alvarocassinelli.com/khronos-projector/
+
+### Artistic and conceptual references
+
+11. Francesco Albano. **Selected works.**  
+    https://medinart.eu/works/francesco-albano/
+
+12. Queensland Art Gallery | Gallery of Modern Art. **Looking at Patricia Piccinini’s monsters looking at us.**  
+    https://www.qagoma.qld.gov.au/stories/looking-at-patricia-piccininis-monsters-looking-at-us/
+
+13. Thoughts Become Words. **Curious Affection: Hybrids of Patricia Piccinini’s Biotechnology Art.**  
+    https://thoughtsbecomewords.com/2018/07/22/curious-affection-hybrids-of-patricia-piccininis-biotechnology-art/
+
+14. Jason Webb. **Morphogenesis Resources.**  
+    https://github.com/jasonwebb/morphogenesis-resources
 
 ---
+
+## Closing note
+
+This project began as a viewer, but it became a question about looking. Medical visualization often promises access to the inside of the body. This work accepts that promise, then bends it. It asks what happens when the inside is not only studied, but arranged, projected, exaggerated, sorted, and displayed.
+
+The body becomes data. The data becomes a surface. The surface becomes an image. The image becomes a specimen again.
