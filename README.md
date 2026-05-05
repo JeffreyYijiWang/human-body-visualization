@@ -103,7 +103,7 @@ Artists such as **Francesco Albano** and **Patricia Piccinini** influenced the p
 
 ## The software as an exhibition interface
 
-`mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py` is not only a program for inspecting a volume. It is a small studio for producing images from a body-like dataset.
+`mpr_multivolume.py` is not only a program for inspecting a volume. It is a small studio for producing images from a body-like dataset.
 
 The interface supports:
 
@@ -260,38 +260,10 @@ Replace these placeholders with final captures from the `images/` and `gifs/` fo
 
 ---
 
-## Installation / presentation setup
-
-Suggested folder structure:
-
-```text
-project/
-├── mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py
-├── README.md
-├── images/
-│   ├── hero_image.png
-│   ├── interface_overview.png
-│   ├── curved_plane_diagram.png
-│   ├── gallery_multivolume_color.png
-│   ├── gallery_multivolume_gradient.png
-│   ├── gallery_multivolume_skeleton.png
-│   ├── gallery_curved_surface_1.png
-│   ├── gallery_curved_surface_2.png
-│   ├── gallery_grid_sort_1.png
-│   ├── gallery_cut_fx_1.png
-│   ├── gallery_blob_pack_1.png
-│   ├── gallery_object_masker.png
-│   ├── gallery_object_reflector.png
-│   └── gallery_capture_sheet.png
-└── gifs/
-    ├── hero_demo.gif
-    └── gallery_timeline_path.gif
-```
-
 Run the project:
 
 ```bash
-python mpr_multivolume_full_fx_objects_v23_ui_curve_panels.py
+python mpr_multivolume.py
 ```
 
 The script expects `.npy` volume files for the main color volume and optional auxiliary volumes. Update the paths in the script to match your local dataset.
@@ -333,18 +305,6 @@ The script expects `.npy` volume files for the main color volume and optional au
 For exhibition display, use **Hide UI** or `F1` to move between the working interface and a cleaner projected image.
 
 ---
-
-## Possible exhibition format
-
-The project could be installed as:
-
-1. **Interactive station** — one monitor with the live viewer and controller input.
-2. **Projection wall** — a large clean output view with the UI hidden.
-3. **Slice archive wall** — printed or projected captures sorted by area, density, skeleton relation, or interest score.
-4. **Process table** — diagrams showing how the curved plane samples the volume.
-5. **Reference wall** — medical visualization, taxidermy, butcher charts, bio-art, and video-cube references.
-
-The ideal presentation would let viewers move between the clinical and the strange: first understanding that the material is a navigable body-like volume, then discovering how quickly that body can become a projection, ornament, trophy, map, or synthetic flesh object.
 
 ---
 
