@@ -166,6 +166,18 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   <img src="gifs/tripdrict-gif.gif" width="100%" style="display: block;">
 </div>
 
+Medical imaging systems such as CT and MRI are commonly understood through three anatomical orientations: the frontal (coronal) plane, the sagittal plane, and the transverse (axial) plane. These planes were developed as standardized ways of dissecting and visualizing the human body, allowing anatomy to be consistently compared across atlases, scans, surgeries, and scientific studies. The sagittal plane divides the body into left and right halves, the frontal plane separates front from back, and the transverse plane slices horizontally through the body. Together, these views became one of the dominant visual languages of modern medical imaging and anatomical representation.
+
+This project starts with global axes but the software reconstructs slices from arbitrary orientations inside the volume to then display the flesh. Each slice is defined through a local coordinate frame composed of:
+
+<ul>
+  <li>a surface normal describing the viewing direction,</li>
+  <li>a local <b>U</b> tangent axis,</li>
+  <li>and a local <b>V</b> bitangent axis orthogonal to both the normal and U direction.</li>
+</ul>
+
+Together, these vectors define a movable sampling plane inside the 3D dataset. This allows the viewer to move beyond the rigid global anatomical directions into local, oblique, and curved sampling systems. The result is a hybrid between traditional Multi-Planar Reconstruction (MPR) imaging and an exploratory spatial instrument: slices can rotate, bend, drift, or follow custom mathematical surfaces while still respecting the underlying volumetric structure.
+
 ### Multi-volume comparisons
 
 <div align="center">
@@ -295,7 +307,8 @@ Vector-flow effects use directional fields to push pixels through the image. The
 ### Hemoglobin
 The hemoglobin mode is a speculative color-analysis effect. It uses the red, green, and brightness relationships in the frame as a proxy for oxygenation, freshness, and tissue state. 
 
-<video controls src="https://github.com/JeffreyYijiWang/human-body-visualization/blob/main/videos/hemoglobin.mp4" style="max-width: 100%;">
+<video controls src="https://raw.githubusercontent.com/JeffreyYijiWang/human-body-visualization/main/videos/hemoglobin.mp4" style="max-width: 100%;">
+</video>
 
 </video>
 <table>
@@ -308,7 +321,7 @@ The hemoglobin mode is a speculative color-analysis effect. It uses the red, gre
 
 
 ### Drift
- <video controls src="https://github.com/JeffreyYijiWang/human-body-visualization/blob/main/videos/hemoglobin.mp4" style="max-width: 100%;">
+ <video controls src="https://raw.githubusercontent.com/JeffreyYijiWang/human-body-visualization/main/videos/dift-video.mp4" style="max-width: 100%;">
 </video>
 <table>
   <tr>
