@@ -1,6 +1,5 @@
 # Slices of Meat?
 
-
 ![](gifs/tripdrict-gif.gif)
 <br>
 
@@ -40,8 +39,6 @@ The project grew from several overlapping questions:
 
 The resulting software creates a space where the user can move through the volume, compare tissue-like structures, generate strange projections, and search for views that feel visually or conceptually charged.
 
-
-
 ---
 
 ## Conceptual references
@@ -66,7 +63,6 @@ The project is indebted to the history of digital anatomical datasets and sectio
 These projects make the body available as data. My project asks how that data can also become an aesthetic and critical material.
 
 ### Video cubes, time cubes, and slicing surfaces
-
 
 <table>
   <tr>
@@ -101,7 +97,7 @@ Those projects helped me think about the slice not as a fixed medical convention
     </td>
   </tr>
   <tr>
-    <td align="left" width="50%">
+    <td align="center" width="50%">
       Ballerina ©Francesco Albano
     </td>
   </tr>
@@ -129,24 +125,9 @@ The interface supports:
 
 The interface becomes a kind of dissection table, projection surface, and editing desk at the same time.
 
-<table>
-  <tr>
-    <td align="center" width="100%">
-      <img src="images/interface_overview.png" width="850"><br>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" width="100%">
-      <strong>Placeholder:</strong> annotated overview of the software interface showing the main slice, side curve panels, top toolbar, object controls, timeline, and heuristic panel.
-    </td>
-  </tr>
-</table>
-
----
-
 ## A key technical problem: making the slice behave like a surface
 
-A flat MPR viewer is relatively direct: choose a point in the volume, choose two axes for the image plane, sample the voxel data, and display the result. But a curved plane is less obvious. It is not just a rectangle passing through the volume. It is a surface that bends away from its own base plane.
+A flat MPR viewer choose a point in the volume, choose two axes for the image plane, sample the voxel data, and display the result. But a curved plane is less obvious. It is not just a rectangle passing through the volume. It is a surface that bends away from its own base plane.
 
 The curved-plane editor solves this by treating the slice as a parameterized surface. Each screen pixel maps to a local coordinate on the plane, and that coordinate is displaced along the plane normal by a curve function.
 
@@ -166,31 +147,24 @@ sampled voxel color
 
 The system turns a flat image plane into a deformable probe. The viewer no longer simply cuts the body:. Instead, the viewer presses, bends, and reshapes the surface of vision.
 
-<table>
-  <tr>
-    <td align="center" width="100%">
-      <img src="gifs/saddle.gif" width="800"><br>
-    </td>
-  </tr>
-</table>
-
+<div align="center">
+  <img src="gifs/saddle.gif" width="100%" style="display: block;">
+</div>
 
 ## Gallery of visualizations
 
+### Frontal, Trasverse, and Sagittal Plane
 
-### Frontal,Trasverse,and Sagittal Plane
-<td align="center" width="50%"><img src="gifs/tripdrict-gif.gif" width="400"></td>
+<div align="center">
+  <img src="gifs/tripdrict-gif.gif" width="100%" style="display: block;">
+</div>
 
 ### Multi-volume comparisons
 
-<table>
-  <tr>
-    <td align="center" width="100%"><img src="images/skeleton-2.png "></td>
-  </tr>
-  <tr>
-    <td align="left">Color volume as flesh-like image, Gradient-distance view as thickness, Skeleton view as extracted internal scaffold</td>
-  </tr>
-</table>
+<div align="center">
+  <img src="images/skeleton-2.png" width="100%" style="display: block;">
+  <p align="left"><i>Color volume as flesh-like image, Gradient-distance view as thickness, Skeleton view as extracted internal scaffold</i></p>
+</div>
 
 ### Color Channels
 
@@ -230,12 +204,13 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   </tr>
 </table>
 
-<table>
-  <tr>
-    <td align="center" width="100%"><img src="images/Saddle.png.png" width="800"></td>
-  </tr>
-</table>
+<div align="center">
+  <img src="images/Saddle.png" width="100%" style="display: block;">
+</div>
+
+
 ### Reproduction
+
 <table>
   <tr>
     <td align="center" width="100%"><img src="gifs/repeat-gif.gif" width="400"></td>
@@ -252,6 +227,7 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 </table>
 
 ### Cut Meat
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/MEAT5.png" width="400"></td>
@@ -275,6 +251,7 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 </table>
 
 ### Inflation
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="gifs/tube-inflation-gif.gif" width="400"></td>
@@ -285,6 +262,7 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 </table>
 
 ### Spring
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="gifs/spring-gif.gif" width="400"></td>
@@ -295,8 +273,8 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   </tr>
 </table>
 
-
 ### Vector-Flow Fields
+
 <table>
   <tr>
     <td align="center" width="100%"><img src="gifs/vector-flow-gif.gif" width="800"></td>
@@ -317,14 +295,12 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   </tr>
 </table>
 
-
-### Hemoglobin 
+### Hemoglobin
 
 <table>
   <tr>
-      <video controls playsinline width="720" style="width:100%; max-width:720px; display:block; margin:0 auto;">
-           <source src="videos/hemoglobin.mp4" type="video/mp4">
-         </video>
+    <video controls src="videos/hemoglobin.mp4" controls="controls" style="max-width: 100%;">
+</video>
   </tr>
   <tr>
     <td align="center" width="50%"><img src="images/hemoglobin.png" width="400"></td>
@@ -332,12 +308,11 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   </tr>
 </table>
 
-
 ### Drift
 
 <table>
   <tr>
-     <video controls playsinline width="720" style="width:100%; max-width:720px; display:block; margin:0 auto;">   <source src="videos/dift-video.mp4" type="video/mp4">
+    <video controls src="videos/dift-video.mp4" controls="controls" style="max-width: 100%;">
 </video>
   </tr>
   <tr>
@@ -346,8 +321,8 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   </tr>
 </table>
 
-
 ### Honey-Comb Fragment
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/pattern.png" width="400"></td>
@@ -387,33 +362,33 @@ The script expects `.npy` volume files for the main color volume and optional au
 
 ### Core keys
 
-| Key | Action |
-| --- | --- |
-| `T` | Cycle view mode |
-| `H` | Hide/show mouse cursor |
-| `Y` | Toggle analysis / heuristics so blob counters do not run every frame |
-| `F1` | Hide/show UI |
-| `F2` | Hide/show gizmo |
-| `F3` | Recommend or apply an interesting next view |
-| `F4` | Start/stop 24 fps capture |
-| `F5` | Toggle blob debug overlay |
-| `F6` | Search for blob-dense / low-interest view |
-| `F7 / F8` | Cycle color filter mode / target |
-| `F9` | Cycle display variant |
-| `F10` | Toggle aux-from-main mode |
-| `F11` | Cycle frame transform |
-| `F12` | Toggle Brownian auto motion |
+| Key       | Action                                                               |
+| --------- | -------------------------------------------------------------------- |
+| `T`       | Cycle view mode                                                      |
+| `H`       | Hide/show mouse cursor                                               |
+| `Y`       | Toggle analysis / heuristics so blob counters do not run every frame |
+| `F1`      | Hide/show UI                                                         |
+| `F2`      | Hide/show gizmo                                                      |
+| `F3`      | Recommend or apply an interesting next view                          |
+| `F4`      | Start/stop 24 fps capture                                            |
+| `F5`      | Toggle blob debug overlay                                            |
+| `F6`      | Search for blob-dense / low-interest view                            |
+| `F7 / F8` | Cycle color filter mode / target                                     |
+| `F9`      | Cycle display variant                                                |
+| `F10`     | Toggle aux-from-main mode                                            |
+| `F11`     | Cycle frame transform                                                |
+| `F12`     | Toggle Brownian auto motion                                          |
 
 ### UI tabs
 
-| Tab | Purpose |
-| --- | --- |
-| **Move / Brush** | Navigation, slicing, cursor and brush-like interaction |
-| **Timeline** | Waypoints, playback, camera paths, looping |
-| **Screen FX** | Image-space transformations and fragment effects |
-| **Objects** | Add and edit blockers, maskers, reflectors, and shifters |
-| **Plane** | Curved-plane settings, amplitude, radius, side views |
-| **Heuristics** | Blob count, fill area, interest score, and debugging |
+| Tab              | Purpose                                                  |
+| ---------------- | -------------------------------------------------------- |
+| **Move / Brush** | Navigation, slicing, cursor and brush-like interaction   |
+| **Timeline**     | Waypoints, playback, camera paths, looping               |
+| **Screen FX**    | Image-space transformations and fragment effects         |
+| **Objects**      | Add and edit blockers, maskers, reflectors, and shifters |
+| **Plane**        | Curved-plane settings, amplitude, radius, side views     |
+| **Heuristics**   | Blob count, fill area, interest score, and debugging     |
 
 For exhibition display, use **Hide UI** or `F1` to move between the working interface and a cleaner projected image.
 
@@ -421,13 +396,11 @@ For exhibition display, use **Hide UI** or `F1` to move between the working inte
 
 ---
 
-
 ## Future Work
 
 This project began as a viewer, but it became a question about looking. Medical visualization often promises access to the inside of the body. This work accepts that promise, then bends it. It asks what happens when the inside is not only studied, but arranged, projected, exaggerated, sorted, and displayed.
 
-I want to continue to 
-
+I want to continue to build the tool with my next steps integrating svg pen-plots and including a feature to switch between volumes. In the future, I would like to deploy this application online using Three.js. 
 
 ## References
 
@@ -439,10 +412,10 @@ I want to continue to
 2. National Library of Medicine. **NLM Digital Projects**.  
    https://www.nlm.nih.gov/digitalprojects.html
 
-3. Kim, Chung Yoh; Chung, Min Suk; Park, Jin Seo. **Visible Korean based on true color sectioned images for making realistic digital human, twenty years’ record: a review.** *Surgical and Radiologic Anatomy*, 2024.  
+3. Kim, Chung Yoh; Chung, Min Suk; Park, Jin Seo. **Visible Korean based on true color sectioned images for making realistic digital human, twenty years’ record: a review.** _Surgical and Radiologic Anatomy_, 2024.  
    https://pubmed.ncbi.nlm.nih.gov/38717503/
 
-4. Chung, Beom Sun; Park, Jin Seo. **Real-Color Volume Models Made from Real-Color Sectioned Images of Visible Korean.** *Journal of Korean Medical Science*, 2019.  
+4. Chung, Beom Sun; Park, Jin Seo. **Real-Color Volume Models Made from Real-Color Sectioned Images of Visible Korean.** _Journal of Korean Medical Science_, 2019.  
    https://pmc.ncbi.nlm.nih.gov/articles/PMC6417999/
 
 5. OsiriX. **DICOM Viewer.**  
