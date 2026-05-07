@@ -261,8 +261,8 @@ The reproduction effects multiply the current frame into grids, tiles, or repeat
 ### Spring
 <table>
   <tr>
-    <td align="center" width="40%"><img src="gifs/spring-gif.gif" width="400"></td>
-    <td align="center" width="50%"><img src="gifs/spring-gif-2.gif" width="900"></td>
+    <td align="center" width="50%"><img src="gifs/spring-gif.gif" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/spring-gif-2.gif" width="400"></td>
   </tr>
 </table>
 
@@ -294,12 +294,9 @@ Vector-flow effects use directional fields to push pixels through the image. The
 
 ### Hemoglobin
 The hemoglobin mode is a speculative color-analysis effect. It uses the red, green, and brightness relationships in the frame as a proxy for oxygenation, freshness, and tissue state. 
-
-<table>
-  <tr>
-    <video controls src="videos/hemoglobin.mp4" controls="controls" style="max-width: 100%;">
+<video controls src="videos/hemoglobin.mp4" style="max-width: 100%;">
 </video>
-  </tr>
+<table>
   <tr>
     <td align="center" width="40%"><img src="images/hemoglobin.png" width="400"></td>
     <td align="center" width="60%"><img src="images/hemoglobin3.png" width="400"></td>
@@ -309,12 +306,9 @@ The hemoglobin mode is a speculative color-analysis effect. It uses the red, gre
 
 
 ### Drift
-
-<table>
-  <tr>
-    <video controls src="videos/dift-video.mp4" controls="controls" style="max-width: 100%;">
+ <video controls src="videos/dift-video.mp4" style="max-width: 100%;">
 </video>
-  </tr>
+<table>
   <tr>
     <td align="center" width="50%"><img src="images/drift.png" width="400"></td>
     <td align="center" width="50%"><img src="images/drift-2.png" width="400"></td>
