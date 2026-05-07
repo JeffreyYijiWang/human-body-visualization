@@ -13,11 +13,8 @@ The project sits between **scientific instrument**, **image-making system**, and
 
 ---
 
-<table>
-  <tr>
-    <td align="center" width="100%"><img src="gifs/tube-inflation-gif.gif" width="800"></td>
-  </tr>
-</table>
+  <div align="center" width="100%"><img src="gifs/tube-inflation-gif.gif" width="800">
+  </div>
 
 ## Project Ambitions
 
