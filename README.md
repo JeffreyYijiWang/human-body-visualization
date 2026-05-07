@@ -307,8 +307,11 @@ Vector-flow effects use directional fields to push pixels through the image. The
 ### Hemoglobin
 The hemoglobin mode is a speculative color-analysis effect. It uses the red, green, and brightness relationships in the frame as a proxy for oxygenation, freshness, and tissue state. 
 
-<video controls src="https://raw.githubusercontent.com/JeffreyYijiWang/human-body-visualization/main/videos/hemoglobin.mp4" style="max-width: 100%;">
-</video>
+<div align="center">
+  <video controls muted playsinline width="100%">
+    <source src="https://raw.githubusercontent.com/JeffreyYijiWang/human-body-visualization/main/videos/hemoglobin.mp4" type="video/mp4">
+  </video>
+</div>
 
 </video>
 <table>
@@ -321,8 +324,13 @@ The hemoglobin mode is a speculative color-analysis effect. It uses the red, gre
 
 
 ### Drift
- <video controls src="https://raw.githubusercontent.com/JeffreyYijiWang/human-body-visualization/main/videos/dift-video.mp4" style="max-width: 100%;">
+
+<div align="center">
+ <video controls muted playsinline width="100%">
+ <source src="https://raw.githubusercontent.com/JeffreyYijiWang/human-body-visualization/main/videos/dift-video.mp4"  type="video/mp4">   </video>
 </video>
+
+</div>
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/drift.png" width="400"></td>
