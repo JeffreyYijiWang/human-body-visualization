@@ -1,6 +1,8 @@
 # Slices of Meat?
 
-![](gifs/tripdrict-gif.gif)
+<div align="center">
+<img src="gifs/tripdrict-gif.gif" width="100%" style="display: block;">
+</div>
 <br>
 
 **Slices of Meat?** is an experimental visualization system for navigating stacked anatomical/meat imagery as a spatial, sculptural, and cultural object. Built around `mpr_multivolume.py`, the project loads a main color volume alongside optional skeleton and gradient-distance volumes, then allows the viewer to cut, bend, compare, mask, transform, and recompose the body through a set of interactive viewing modes.
@@ -10,6 +12,12 @@ The work borrows the visual language of medical imaging, butcher diagrams, taxid
 The project sits between **scientific instrument**, **image-making system**, and **speculative exhibition interface**. It is both a viewer and a way of staging the body.
 
 ---
+
+<table>
+  <tr>
+    <td align="center" width="100%"><img src="gifs/tube-inflation-gif.gif" width="800"></td>
+  </tr>
+</table>
 
 ## Project Ambitions
 
@@ -24,6 +32,8 @@ In this viewer, a slice is not just a medical cross-section. It can become a but
 I was thinking about the difference between a body used for science and a body used as a display object. A taxidermy moose head on a wall is not only an animal; it is a token of hunting, ownership, conquest, memory, decoration, and control. A medical volume is also a form of display. It claims a different purpose—education, accuracy, diagnosis—but it still transforms a body into an object that can be viewed, rotated, sliced, and possessed through vision.
 
 This project explores the uneasy space between those two forms of looking.
+
+ <div align="center" width="100%"><img src="images/MEAT4.png"></div>
 
 ---
 
@@ -44,19 +54,20 @@ The resulting software creates a space where the user can move through the volum
 ## Conceptual references
 
 ### Visible bodies
-
+<div align="center">
 <table>
   <tr>
-    <td align="center" width="50%">
+    <td align="center" width="100%">
       <img src="images/medical-imagery.png" width="420"><br>
     </td>
   </tr>
   <tr>
-    <td align="left" width="50%">
+    <td align="left" width="100%">
       Medical visualization of cryosection images from Visible Korean references.
     </td>
   </tr>
 </table>
+</div>
 
 The project is indebted to the history of digital anatomical datasets and sectioned-image projects. The **Visible Human Project** transformed cadaveric bodies into complete digital image volumes. **Visible Korean** and related visible-body projects extend this lineage through true-color, high-resolution sectioned images used for anatomical research, education, and virtual models.
 
@@ -64,24 +75,23 @@ These projects make the body available as data. My project asks how that data ca
 
 ### Video cubes, time cubes, and slicing surfaces
 
-<table>
+<table align="center">
   <tr>
-    <td align="center" width="50%">
+    <td align="center" width="57%">
       <img src="images/video-cubism.png" width="420"><br>
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="40%">
       <img src="images/image-stacks.png" width="420"><br>
     </td>
 
   </tr>
-     <tr>
-      <td align="center" width="50%">
+     <div>
+      <td align="center" width="60%">
       <img src="images/inspiration.jpg" width="420"><br>
     </td>
-     <td align="center" width="50%">
+     <td align="center" width="40%">
       <img src="images/kronos-projection.png" width="420"><br>
     </td>
-  </tr>
 </table>
 
 The project also connects to computational artworks and visualization systems that treat image sequences as volumes. **Video Cubism** allowed users to slice through a video cube using arbitrary planes and curved surfaces. **Stylized Video Cubes** treated video as a space-time volume for non-photorealistic rendering. **Khronos Projector** turned touch into a way of deforming time inside a video surface.
@@ -182,6 +192,8 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 
 ### Curved slicing and projection
 
+Curved slicing replaces the flat MPR plane with a spatial function such as a parabola, saddle, cylinder, or ripple. Instead of cutting the body with a rigid sheet, the slice bends through the volume. This produces a projection-like reading of anatomy where one image can unfold tissue from different depths.
+
 <table>
   <tr>
     <td align="center" width="50%"><img src="gifs/curve-parabola.gif" width="400"></td>
@@ -218,17 +230,18 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 </table>
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/MEAT3.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/MEAT4.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/MEAT3.png" width="800"></td>
   </tr>
 </table>
 
-### Cut Meat
+
+The reproduction effects multiply the current frame into grids, tiles, or repeated fragments. These were made to connect anatomical imaging with the language of display, packaging, butchery, and specimen storage. The image becomes less like a single body and more like a repeated commodity or catalogued object.
+
 
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/MEAT5.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/MEAT8.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/Meat8.png" width="400"></td>
   </tr>
   <tr>
     <td align="center" width="50%"><img src="images/MEAT7.png" width="400"></td>
@@ -241,36 +254,24 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
     <td align="center" width="50%"><img src="images/meat-cut.png" width="400"></td>
     <td align="center" width="50%"><img src="images/meat-cut-3.png" width="400"></td>
   </tr>
-  <tr>
-    <td align="center" width="50%"><img src="images/meat-cut-4.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/meat-slice.png" width="400"></td>
-  </tr>
+  
 </table>
+    <div align="center" width="100%"><img src="images/meat-cut-4.png" width="800"></div>
+    <div align="center" width="100%"><img src="images/meat-slice.png" width="800"></div>
 
-### Inflation
 
-<table>
-  <tr>
-    <td align="center" width="50%"><img src="gifs/tube-inflation-gif.gif" width="800"></td>
-  </tr>
-  <tr>
-    <td align="left"> Compression and expansion of layers around tubes placed on slice </td>
-  </tr>
-</table>
 
 ### Spring
-
 <table>
   <tr>
-    <td align="center" width="50%"><img src="gifs/spring-gif.gif" width="400"></td>
-    <td align="center" width="50%"><img src="gifs/spring-gif-2.gif" width="400"></td>
-  </tr>
-  <tr>
-    <td align="left"> Pixels given mass and elastic force to stretch and bend </td>
+    <td align="center" width="40%"><img src="gifs/spring-gif.gif" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/spring-gif-2.gif" width="900"></td>
   </tr>
 </table>
 
 ### Vector-Flow Fields
+
+Vector-flow effects use directional fields to push pixels through the image. The field can be derived from the silhouette, the skeleton, local color differences, or procedural noise. This makes the slice appear pulled by currents, as if flesh, bone, and empty space each exert different forces on the image.
 
 <table>
   <tr>
@@ -292,7 +293,10 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
   </tr>
 </table>
 
+
+
 ### Hemoglobin
+The hemoglobin mode is a speculative color-analysis effect. It uses the red, green, and brightness relationships in the frame as a proxy for oxygenation, freshness, and tissue state. 
 
 <table>
   <tr>
@@ -300,10 +304,12 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 </video>
   </tr>
   <tr>
-    <td align="center" width="50%"><img src="images/hemoglobin.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/hemoglobin3.png" width="400"></td>
+    <td align="center" width="40%"><img src="images/hemoglobin.png" width="400"></td>
+    <td align="center" width="60%"><img src="images/hemoglobin3.png" width="400"></td>
   </tr>
 </table>
+
+
 
 ### Drift
 
@@ -332,28 +338,20 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 </table>
 
 ### Timeline and capture
-
+The timeline system records camera positions, slice orientations, and selected frames. These waypoints can be replayed as a path through the volume, then captured and sorted according to visual heuristics such as filled area, connected components, similarity, or interest score.
 <table>
   <tr>
-    <td align="center" width="50%"><img src="gifs/way-point2.gif" width="400"></td>
-    <td align="center" width="50%"><img src="images/seed.png" width="400"></td>
+    <td align="center" width="100%"><img src="gifs/way-point2.gif" width="800"></td>
   </tr>
   <tr>
     <td align="left">Timeline playback through a recorded camera path.</td>
   </tr>
 </table>
 
----
+ <div align="center" width="100%"><img src="images/seed.png" width="800"></div>
 
-Run the project:
 
-```bash
-python mpr_multivolume.py
-```
 
-The script expects `.npy` volume files for the main color volume and optional auxiliary volumes. Update the paths in the script to match your local dataset.
-
----
 
 ## Controls / interaction guide
 
@@ -391,13 +389,28 @@ For exhibition display, use **Hide UI** or `F1` to move between the working inte
 
 ---
 
+Run the project:
+
+```bash
+python mpr_multivolume.py
+```
+
+The script expects `.npy` volume files for the main color volume and optional auxiliary volumes. Update the paths in the script to match your local dataset.
+
 ---
+
+<table>
+  <tr>
+    <td align="center" width="60%"><img src="images/dark-3.png" width="330"></td>
+    <td align="center" width="40%"><img src="images/dark.png" width="250"></td>
+  </tr>
+</table>
 
 ## Future Work
 
 This project began as a viewer, but it became a question about looking. Medical visualization often promises access to the inside of the body. This work accepts that promise, then bends it. It asks what happens when the inside is not only studied, but arranged, projected, exaggerated, sorted, and displayed.
 
-I want to continue to build the tool with my next steps integrating svg pen-plots and including a feature to switch between volumes. In the future, I would like to deploy this application online using Three.js. 
+I want to continue to build the tool with my next steps integrating svg pen-plots and including a feature to switch between volumes. In the future, I would like to deploy this application online using Three.js.
 
 ## References
 
