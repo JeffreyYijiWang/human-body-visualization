@@ -213,10 +213,7 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 
 <table>
   <tr>
-    <td align="center" width="100%"><img src="gifs/repeat-gif.gif" width="400"></td>
-  </tr>
-  <tr>
-    <td align="left"> 3 x 3 grid of hanged meat </td>
+    <td align="center" width="100%"><img src="gifs/repeat-gif.gif" width="800"></td>
   </tr>
 </table>
 <table>
@@ -254,7 +251,7 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="gifs/tube-inflation-gif.gif" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/tube-inflation-gif.gif" width="800"></td>
   </tr>
   <tr>
     <td align="left"> Compression and expansion of layers around tubes placed on slice </td>
