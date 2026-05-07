@@ -170,7 +170,7 @@ The system turns a flat image plane into a deformable probe. The viewer no longe
 
 <div align="center">
   <img src="images/skeleton-2.png" width="100%" style="display: block;">
-  <p align="left"><i>Color volume as flesh-like image, Gradient-distance view as thickness, Skeleton view as extracted internal scaffold</i></p>
+  <p align="left"><i>Color volume as flesh-like image, Gradient-distance view as thickness, Skeleton view as extracted internal scaffold and prebuilt as volumes </i></p>
 </div>
 
 ### Color Channels
@@ -294,7 +294,9 @@ Vector-flow effects use directional fields to push pixels through the image. The
 
 ### Hemoglobin
 The hemoglobin mode is a speculative color-analysis effect. It uses the red, green, and brightness relationships in the frame as a proxy for oxygenation, freshness, and tissue state. 
-<video controls src="videos/hemoglobin.mp4" style="max-width: 100%;">
+
+<video controls src="https://github.com/JeffreyYijiWang/human-body-visualization/blob/main/videos/hemoglobin.mp4" style="max-width: 100%;">
+
 </video>
 <table>
   <tr>
@@ -306,7 +308,7 @@ The hemoglobin mode is a speculative color-analysis effect. It uses the red, gre
 
 
 ### Drift
- <video controls src="videos/dift-video.mp4" style="max-width: 100%;">
+ <video controls src="https://github.com/JeffreyYijiWang/human-body-visualization/blob/main/videos/hemoglobin.mp4" style="max-width: 100%;">
 </video>
 <table>
   <tr>
@@ -390,12 +392,10 @@ The script expects `.npy` volume files for the main color volume and optional au
 
 ---
 
-<table>
-  <tr>
-    <td align="center" width="60%"><img src="images/dark-3.png" width="330"></td>
-    <td align="center" width="40%"><img src="images/dark.png" width="250"></td>
-  </tr>
-</table>
+<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 5;">
+  <img src="images/dark-3.png" style="width: 50%; height: auto; display: block;">
+  <img src="images/dark.png" style="width: 50%; height: auto; display: block;">
+</div>
 
 ## Future Work
 
