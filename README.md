@@ -110,7 +110,7 @@ Those projects helped me think about the slice not as a fixed medical convention
   </tr>
 </table>
 
-Artists such as **Francesco Albano** and **Patricia Piccinini** influenced the project’s interest in flesh that appears altered, synthetic, tender, grotesque, or engineered. Piccinini’s hybrid creatures are especially relevant because they are simultaneously biological, artificial, vulnerable, and designed. They make the viewer question what kind of body they are looking at—and what obligations that act of looking creates.
+Artists such as **Francesco Albano** and **Patricia Piccinini** influenced the project’s interest in flesh that appears altered, synthetic, tender, grotesque, or engineered. Piccinini’s hybrid creatures are especially relevant because they are simultaneously biological, artificial, vulnerable, and designed. They make the viewer question what kind of body they are looking at and what obligations that the act of looking creates.
 
 ---
 
