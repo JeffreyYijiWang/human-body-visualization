@@ -1,28 +1,8 @@
 # Slices of Meat?
 
-### *MPR Multi-Volume Full FX Objects v23 UI Curve Panels*
 
-![](images/hero_image.png)
+![](gifs/tripdrict-gif.gif)
 <br>
-
-**Hero image placeholder:** a full-screen view of the software showing a colored anatomical/meat volume, a curved slicing plane, and the side curve inspection panels.
-
-<table>
-  <tr>
-    <td align="center" width="100%">
-      <img src="gifs/hero_demo.gif" width="850"><br>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" width="100%">
-      <strong>Hero video placeholder.</strong> Suggested capture: orbit through the color volume, switch to multi-volume view, open the curved-plane editor, and hide/show the UI for a clean exhibition-style shot.
-    </td>
-  </tr>
-</table>
-
----
-
-## Abstract
 
 **Slices of Meat?** is an experimental visualization system for navigating stacked anatomical/meat imagery as a spatial, sculptural, and cultural object. Built around `mpr_multivolume.py`, the project loads a main color volume alongside optional skeleton and gradient-distance volumes, then allows the viewer to cut, bend, compare, mask, transform, and recompose the body through a set of interactive viewing modes.
 
@@ -32,7 +12,7 @@ The project sits between **scientific instrument**, **image-making system**, and
 
 ---
 
-## Project statement
+## Project Ambitions
 
 The original ambition of many human visualization projects was to make the body legible. The body was dissected, photographed, scanned, registered, segmented, and reconstructed so that medical knowledge could become more precise. The **Visible Human Project**, for example, made public cross-sectional cryosection, CT, and MRI images of human bodies as a reference for anatomy, medical imaging, and computational research.
 
@@ -40,7 +20,7 @@ My project begins from that lineage, but moves toward a different question:
 
 > **What if the goal is not only to see the body correctly, but to see how many cultural and computational forms a body can take?**
 
-In this viewer, a slice is not just a medical cross-section. It can become a butcher cut, a projection, a specimen, a trophy, a wall object, a screen surface, or a distorted memory of a body. The tool treats volume data as an unstable material: one that can be opened, folded, recomposed, and misread.
+In this viewer, a slice is not just a medical cross-section. It can become a butcher cut, a projection, a specimen, a trophy, a wall object, a screen surface, or a distorted memory of a body. The tool treats a body as an unstable material: one that can be opened, folded, recomposed, and misread.
 
 I was thinking about the difference between a body used for science and a body used as a display object. A taxidermy moose head on a wall is not only an animal; it is a token of hunting, ownership, conquest, memory, decoration, and control. A medical volume is also a form of display. It claims a different purpose—education, accuracy, diagnosis—but it still transforms a body into an object that can be viewed, rotated, sliced, and possessed through vision.
 
@@ -60,24 +40,7 @@ The project grew from several overlapping questions:
 
 The resulting software creates a space where the user can move through the volume, compare tissue-like structures, generate strange projections, and search for views that feel visually or conceptually charged.
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="images/inspiration_medical_archive.png" width="420"><br>
-    </td>
-    <td align="center" width="50%">
-      <img src="images/inspiration_taxidermy_meat.png" width="420"><br>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" width="50%">
-      <strong>Placeholder:</strong> medical visualization, cryosection images, anatomy atlases, DICOM viewers, Visible Human / Visible Korean references.
-    </td>
-    <td align="left" width="50%">
-      <strong>Placeholder:</strong> butcher charts, taxidermy, farm animals, artificial bodies, bio-art, hybrid creatures, meat display.
-    </td>
-  </tr>
-</table>
+
 
 ---
 
@@ -85,17 +48,64 @@ The resulting software creates a space where the user can move through the volum
 
 ### Visible bodies
 
-The project is indebted to the history of digital anatomical datasets and sectioned-image projects. The **Visible Human Project** transformed cadaveric bodies into complete digital image volumes. **Visible Korean** and related visible-body projects extend this lineage through true-color, high-resolution sectioned images used for anatomical research, education, and virtual human models.
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="images/medical-imagery.png" width="420"><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" width="50%">
+      Medical visualization of cryosection images from Visible Korean references.
+    </td>
+  </tr>
+</table>
+
+The project is indebted to the history of digital anatomical datasets and sectioned-image projects. The **Visible Human Project** transformed cadaveric bodies into complete digital image volumes. **Visible Korean** and related visible-body projects extend this lineage through true-color, high-resolution sectioned images used for anatomical research, education, and virtual models.
 
 These projects make the body available as data. My project asks how that data can also become an aesthetic and critical material.
 
 ### Video cubes, time cubes, and slicing surfaces
 
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="images/video-cubism.png" width="420"><br>
+    </td>
+    <td align="center" width="50%">
+      <img src="images/image-stacks.png" width="420"><br>
+    </td>
+
+  </tr>
+     <tr>
+      <td align="center" width="50%">
+      <img src="images/inspiration.jpg" width="420"><br>
+    </td>
+     <td align="center" width="50%">
+      <img src="images/kronos-projection.png" width="420"><br>
+    </td>
+  </tr>
+</table>
+
 The project also connects to computational artworks and visualization systems that treat image sequences as volumes. **Video Cubism** allowed users to slice through a video cube using arbitrary planes and curved surfaces. **Stylized Video Cubes** treated video as a space-time volume for non-photorealistic rendering. **Khronos Projector** turned touch into a way of deforming time inside a video surface.
 
-Those projects helped me think about the slice not as a fixed medical convention, but as an interface: a moving surface that can cut through data, time, memory, and image.
+Those projects helped me think about the slice not as a fixed medical convention, but as an interaction where moving surfaces can cut through data, time, memory, and image.
 
 ### Hybrid bodies and speculative flesh
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="images/ballerina.png" width="420"><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" width="50%">
+      Ballerina ©Francesco Albano
+    </td>
+  </tr>
+</table>
 
 Artists such as **Francesco Albano** and **Patricia Piccinini** influenced the project’s interest in flesh that appears altered, synthetic, tender, grotesque, or engineered. Piccinini’s hybrid creatures are especially relevant because they are simultaneously biological, artificial, vulnerable, and designed. They make the viewer question what kind of body they are looking at—and what obligations that act of looking creates.
 
@@ -154,53 +164,45 @@ curve displacement along normal
 sampled voxel color
 ```
 
-In practical terms, the system turns a flat image plane into a deformable probe. This matters conceptually because the viewer no longer simply cuts the body: the viewer presses, bends, and reshapes the surface of vision.
+The system turns a flat image plane into a deformable probe. The viewer no longer simply cuts the body:. Instead, the viewer presses, bends, and reshapes the surface of vision.
 
 <table>
   <tr>
     <td align="center" width="100%">
-      <img src="images/curved_plane_diagram.png" width="800"><br>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" width="100%">
-      <strong>Diagram placeholder:</strong> show a volume cube, a flat slicing plane, then a curved slicing plane displaced along the normal. Label U, V, normal, amplitude, and radius.
+      <img src="gifs/saddle.gif" width="800"><br>
     </td>
   </tr>
 </table>
 
----
-
-## Development note: from tool to image system
-
-A major development challenge was keeping the viewer fast while the project became more visually ambitious. Early versions relied heavily on CPU-side sampling and image construction. This was reliable but slow, especially when drawing multiple panels or applying effects. Later versions moved toward a more consistent GPU compositor: slices are rendered into offscreen textures and then composed into the final display.
-
-This shift changed the structure of the project. Instead of thinking of the software as a single viewer, I began to think of it as a series of passes:
-
-```text
-volume data → slice sampling → panel composition → image effects → UI / capture
-```
-
-That pipeline made the project easier to extend. It also clarified the artistic structure: every view is a constructed image, not simply a transparent window into data.
-
----
 
 ## Gallery of visualizations
 
-Replace these placeholders with final captures from the `images/` and `gifs/` folders.
+
+### Frontal,Trasverse,and Sagittal Plane
+<td align="center" width="50%"><img src="gifs/tripdrict-gif.gif" width="400"></td>
 
 ### Multi-volume comparisons
 
 <table>
   <tr>
-    <td align="center" width="33%"><img src="images/gallery_multivolume_color.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_multivolume_gradient.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_multivolume_skeleton.png" width="260"></td>
+    <td align="center" width="100%"><img src="images/skeleton-2.png "></td>
   </tr>
   <tr>
-    <td align="left">Color volume as flesh-like image.</td>
-    <td align="left">Gradient-distance view as thickness / density cue.</td>
-    <td align="left">Skeleton view as extracted internal scaffold.</td>
+    <td align="left">Color volume as flesh-like image, Gradient-distance view as thickness, Skeleton view as extracted internal scaffold</td>
+  </tr>
+</table>
+
+### Color Channels
+
+<table>
+  <tr>
+  <td align="center" width="100%"><img src="images/tripdich-inversion.png" width="800"></td>
+  </tr>
+  <tr>
+  <td align="center" width="100%"><img src="images/tripdich-inversion-2.png" width="800"></td>
+  </tr>
+  <tr>
+  <td align="center" width="100%"><img src="images/tripdich-inversion-3.png" width="800"></td>
   </tr>
 </table>
 
@@ -208,40 +210,152 @@ Replace these placeholders with final captures from the `images/` and `gifs/` fo
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/gallery_curved_surface_1.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/gallery_curved_surface_2.png" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/curve-parabola.gif" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/curve-saddle.gif" width="400"></td>
   </tr>
   <tr>
-    <td align="left">A curved surface cutting through the volume.</td>
-    <td align="left">A side-panel view showing the curved section as a spatial surface.</td>
-  </tr>
-</table>
-
-### Butchered grids / reorganized flesh
-
-<table>
-  <tr>
-    <td align="center" width="33%"><img src="images/gallery_grid_sort_1.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_cut_fx_1.png" width="260"></td>
-    <td align="center" width="33%"><img src="images/gallery_blob_pack_1.png" width="260"></td>
-  </tr>
-  <tr>
-    <td align="left">Pixel or slice sorting by value, hue, area, or density.</td>
-    <td align="left">Cut and drift effects that separate the image into meat-like fragments.</td>
-    <td align="left">Packed blobs as a speculative butcher chart or wall arrangement.</td>
+    <td align="left">A parabola cutting through the volume.</td>
+    <td align="left">A saddle curve cutting through the volume.</td>
   </tr>
 </table>
 
-### Object interventions
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/curve-4.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/curve-ripple2.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/curve.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/curve-ripple.png" width="400"></td>
+  </tr>
+</table>
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/gallery_object_masker.png" width="400"></td>
-    <td align="center" width="50%"><img src="images/gallery_object_reflector.png" width="400"></td>
+    <td align="center" width="100%"><img src="images/Saddle.png.png" width="800"></td>
+  </tr>
+</table>
+### Reproduction
+<table>
+  <tr>
+    <td align="center" width="100%"><img src="gifs/repeat-gif.gif" width="400"></td>
   </tr>
   <tr>
-    <td align="left">A 3D object masking a region of the sampled body.</td>
-    <td align="left">A reflector/shifter object altering the visible slice.</td>
+    <td align="left"> 3 x 3 grid of hanged meat </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/MEAT3.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/MEAT4.png" width="400"></td>
+  </tr>
+</table>
+
+### Cut Meat
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/MEAT5.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/MEAT8.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/MEAT7.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/meat9.png" width="400"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/meat-cut.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/meat-cut-3.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/meat-cut-4.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/meat-slice.png" width="400"></td>
+  </tr>
+</table>
+
+### Inflation
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="gifs/tube-inflation-gif.gif" width="400"></td>
+  </tr>
+  <tr>
+    <td align="left"> Compression and expansion of layers around tubes placed on slice </td>
+  </tr>
+</table>
+
+### Spring
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="gifs/spring-gif.gif" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/spring-gif-2.gif" width="400"></td>
+  </tr>
+  <tr>
+    <td align="left"> Pixels given mass and elastic force to stretch and bend </td>
+  </tr>
+</table>
+
+
+### Vector-Flow Fields
+<table>
+  <tr>
+    <td align="center" width="100%"><img src="gifs/vector-flow-gif.gif" width="800"></td>
+  </tr>
+  <tr>
+    <td align="left"> Pixels given mass and elastic force to stretch and bend </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/vector-flow.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/vector-flow-2.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/vector-flow-3.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/vector-flow-4.png" width="400"></td>
+  </tr>
+</table>
+
+
+### Hemoglobin 
+
+<table>
+  <tr>
+      <video controls playsinline width="720" style="width:100%; max-width:720px; display:block; margin:0 auto;">
+           <source src="videos/hemoglobin.mp4" type="video/mp4">
+         </video>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/hemoglobin.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/hemoglobin3.png" width="400"></td>
+  </tr>
+</table>
+
+
+### Drift
+
+<table>
+  <tr>
+     <video controls playsinline width="720" style="width:100%; max-width:720px; display:block; margin:0 auto;">   <source src="videos/dift-video.mp4" type="video/mp4">
+</video>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/drift.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/drift-2.png" width="400"></td>
+  </tr>
+</table>
+
+
+### Honey-Comb Fragment
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/pattern.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/pattern-2.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="images/pattern-3.png" width="400"></td>
+    <td align="center" width="50%"><img src="images/pattern-4.png" width="400"></td>
   </tr>
 </table>
 
@@ -249,12 +363,11 @@ Replace these placeholders with final captures from the `images/` and `gifs/` fo
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="gifs/gallery_timeline_path.gif" width="400"></td>
-    <td align="center" width="50%"><img src="images/gallery_capture_sheet.png" width="400"></td>
+    <td align="center" width="50%"><img src="gifs/way-point2.gif" width="400"></td>
+    <td align="center" width="50%"><img src="images/seed.png" width="400"></td>
   </tr>
   <tr>
     <td align="left">Timeline playback through a recorded camera path.</td>
-    <td align="left">Captured frames sorted from largest filled area to smallest.</td>
   </tr>
 </table>
 
@@ -308,6 +421,14 @@ For exhibition display, use **Hide UI** or `F1` to move between the working inte
 
 ---
 
+
+## Future Work
+
+This project began as a viewer, but it became a question about looking. Medical visualization often promises access to the inside of the body. This work accepts that promise, then bends it. It asks what happens when the inside is not only studied, but arranged, projected, exaggerated, sorted, and displayed.
+
+I want to continue to 
+
+
 ## References
 
 ### Anatomical and medical visualization
@@ -359,9 +480,3 @@ For exhibition display, use **Hide UI** or `F1` to move between the working inte
     https://github.com/jasonwebb/morphogenesis-resources
 
 ---
-
-## Closing note
-
-This project began as a viewer, but it became a question about looking. Medical visualization often promises access to the inside of the body. This work accepts that promise, then bends it. It asks what happens when the inside is not only studied, but arranged, projected, exaggerated, sorted, and displayed.
-
-The body becomes data. The data becomes a surface. The surface becomes an image. The image becomes a specimen again.
